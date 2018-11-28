@@ -1,0 +1,108 @@
+BUT : Passer d'un nombre romain à un nombre décimal
+
+Entrees : Une valeur
+
+Sorties : Une valeur transformée
+
+PROCEDURE RomainVerDecimal 
+
+CONST :
+1000 = M
+900 = CM
+500 = D
+400 = CD
+100 = C
+50 = L
+40 = XL
+10 = X
+9 = IX
+5 = V
+4 = IV
+1 = I
+
+VAR
+     cpt, nb, lgCh : ENTIER
+    Tab : TABLEAU [10] ENTIER
+
+DEBUT
+
+ 
+
+        ECRIRE "Veuillez saisir un nombre romain: "
+        LIRE Tab
+
+        lgCh = LONGUEUR(cCh) 
+
+        POUR cpt DE 0 A lgCh FAIRE
+                SI (Tab[cpt] = 'M') 
+		ALORS
+       	            nb <- nb + 1000
+                
+             SINON SI (Tab[cpt] = 'C') ET (Tab[cpt+1] = 'M')
+		 ALORS
+                nb <- nb + 900
+               cpt <- cpt + 1
+	     FINSI
+                    
+             SINON SI (Tab[cpt] = 'D') 
+		ALORS
+                nb <- nb + 500
+             FINSI
+           
+             SINON SI (Tab[cpt] = 'C') ET (Tab[cpt+1] = 'D') 
+		ALORS
+                nb <- nb + 400
+               cpt <- cpt + 1
+             FINSI
+               
+             SINON SI (Tab[cpt] = 'C')
+                 nb <- nb + 100
+             FINSI 
+                  
+             SINON SI (Tab[cpt] = 'X') ET (Tab[cpt+1] = 'C') 
+		ALORS
+                 nb <- nb + 90
+                cpt <- cpt + 1
+             FINSI
+                       
+             SINON SI (Tab[cpt] = 'L')
+              nb <- nb + 50
+                                        
+             SINON SI (Tab[cpt] = 'X') ET (TAB[cpt+1] = 'L') 
+		ALORS
+               nb <- nb + 40
+             cpt  <- cpt + 1
+             FINSI
+                               
+             SINON SI (Tab[cpt] = 'X') 
+		ALORS
+                  nb <- nb + 10
+	     FINSI
+                                                
+             SINON SI (Tab[cpt] = 'I') ET (TAB[cpt+1] = 'X') 
+		ALORS
+                  nb <- nb + 9 
+                 cpt <- cpt + 1
+ 	     FINSI
+                                                   
+             SINON SI (Tab[cpt] = 'V')
+		 ALORS
+                 nb <- nb + 5
+	     FINSI
+                                                        
+             SINON SI (Tab[cpt] = 'I') ET (Tab[cpt+1] = 'V') 
+		ALORS
+                 nb <- nb + 4
+                 cpt <- cpt + 1
+	    FINSI                                                            
+             SINON SI (Tab[cpt] = 'I')
+		 ALORS
+             nb <- nb + 1
+            FINSI
+                              
+        FINPOUR
+
+        ECRIRE " Votre nombre décimal équivaut à : ", nb
+
+
+FIN PROCEDURE RomainVersDecimal

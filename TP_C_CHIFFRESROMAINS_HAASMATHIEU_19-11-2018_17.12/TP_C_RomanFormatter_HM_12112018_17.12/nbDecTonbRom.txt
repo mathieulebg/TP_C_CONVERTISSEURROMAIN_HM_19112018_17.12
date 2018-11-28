@@ -1,0 +1,110 @@
+But : créer un algorithme qui convertit un chiffre romain en nombre décimal et un nombre décimal en chiffre romain
+
+Principe : Ce programme permet de passer des nombres romains 
+
+Entrée : Un entier ou une chaine.
+
+Sortie : Une chaine ou un entier.
+
+
+CONST :
+M = 100
+CM = 900
+D = 500
+CD = 400
+C = 100
+L= 50
+XL = 40
+X = 10
+IX = 9
+V = 5
+IV = 4
+I = 1
+
+VAR : 
+
+num : ENTIER
+
+
+
+DEBUT
+
+    ENTIER num; //l'utilisateur rentre une valeur devant être égale ou supéreiruer à 1
+
+    //demander à l'utilisateur de rentrer sa valeur
+    ECRIRE"Merci de bien vouloir rentrer une valeur qui sera convertie en valeur romaine:";
+    LIRE num;
+
+    ECRIRE("Le nombre %d convertit est ", num);
+    TANT QUE (num >0)
+
+        SI(num >= 1000)
+            ECRIRE "M";
+            num = num - 1000;
+        
+      	 SINON SI(num >= 900)
+            ECRIRE "CM";
+            num = num - 900;
+	FINSI
+        
+        SINON SI(num >= 500)
+            ECRIRE "D";
+            num = num - 500;
+	FINSI
+        
+        SINON SI(num >=400)
+            ECRIRE "CD";
+            num = num - 400;
+	FINSI
+        
+       	SINON SI(num >=100)
+            ECRIRE "C";
+            num = num -100;
+	FINSI        
+
+       	SINON SI(num >=50)
+            ECRIRE "L";
+            num = num - 50;
+	FINSI  
+      
+        SINON SI(num >=40)
+            ECRIRE "XL";
+            num = num - 40;
+	FINSI       
+ 
+        SINON SI(num >=10)
+            ECRIRE "X";
+            num = num - 10;
+	FINSI  
+      
+        SINON SI(num >=9)
+            ECRIRE "IX";
+            num = num - 9;
+	FINSI       
+ 
+        SINON SI(num >=5)
+            ECRIRE "V";
+            num = num - 5;
+	FINSI  
+      
+        SINON SI(num >=4) ALORS
+            ECRIRE "IV";
+            num = num - 4;
+	FINSI       
+ 
+        SINON SI(num >=1) ALORS
+            ECRIRE "I";
+            num = num - 4;
+	FINSI  
+FINSI
+      
+
+    
+    FIN
+
+
+
+
+
+
+
